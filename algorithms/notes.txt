@@ -1,0 +1,6 @@
+Approachs useds:
+    - Incremental approach (insertion-sort)
+    - Divide-and-conquer approach:
+        Break the problem into several subproblems that are similar to the original prob-
+        lem but smaller in size, solve the subproblems recursively, and then combine these
+        solutions to create a solution to the original problem.
