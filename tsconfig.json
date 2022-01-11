@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "target": "es2017",
+        "module": "commonjs",
+        "strictNullChecks": true,
+        "experimentalDecorators": true,
+        "noImplicitAny": true,
+        "inlineSources": true,
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "lib": [
+            "dom",
+            "es2017",
+            "esnext"
+        ],
+        "outDir": "dist",
+        "forceConsistentCasingInFileNames": true
+    },
+    "include": [
+        "algorithms/**/*",
+        "*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
