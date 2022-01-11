@@ -12,7 +12,7 @@ function bubbleSort(array: number[]) {
     for (let i = 1; i < array.length; i++) {
         for (let j = array.length; j >= i; j--) {
             if (array[j] < array[j - 1]) {
-                var aux = array[j];
+                const aux = array[j];
                 array[j] = array[j - 1];
                 array[j - 1] = aux;
             }

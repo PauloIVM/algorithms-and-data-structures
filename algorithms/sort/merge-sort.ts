@@ -1,9 +1,9 @@
 // INFO: Run 'npx ts-node merge-sort.ts' on prompt to execute or
 // run "Debug Current File" if using vscode :)
 
-interface Array<T> {
-    mergeSort(callback?: (a: any, b: any) => boolean): Array<T>;
-}
+// interface Array<T> {
+//     mergeSort(callback?: (a: any, b: any) => boolean): Array<T>;
+// }
 
 // TODO: Implement as Array.prototype
 
@@ -11,7 +11,7 @@ function mergesort(arr: any[], initialIndex: number = 0, finalIndex?: number) {
     if (!finalIndex) {
         finalIndex = arr.length - 1;
     }
-    let middleIndex: number = Math.floor((finalIndex+initialIndex)/2);
+    const middleIndex: number = Math.floor((finalIndex + initialIndex) / 2);
     if (finalIndex - initialIndex > 1) {
         mergesort(arr, initialIndex, middleIndex);
         mergesort(arr, middleIndex + 1, finalIndex);
@@ -20,9 +20,18 @@ function mergesort(arr: any[], initialIndex: number = 0, finalIndex?: number) {
     merge(arr, initialIndex, middleIndex, finalIndex);
 }
 
-function merge(arr: any[], initialIndex: number, middleIndex: number, finalIndex: number) {
-    let arrLeft = arr.filter((_, index) => index <= middleIndex && index >= initialIndex);
-    let arrRight = arr.filter((_, index) => index > middleIndex && index <= finalIndex);
+function merge(
+    arr: any[],
+    initialIndex: number,
+    middleIndex: number,
+    finalIndex: number
+) {
+    const arrLeft = arr.filter(
+        (_, index) => index <= middleIndex && index >= initialIndex
+    );
+    const arrRight = arr.filter(
+        (_, index) => index > middleIndex && index <= finalIndex
+    );
     let arrLeftIndex = 0;
     let arrRightIndex = 0;
     for (let index = initialIndex; index <= finalIndex; index++) {
@@ -58,8 +67,10 @@ function merge(arr: any[], initialIndex: number, middleIndex: number, finalIndex
     }
 }
 
-const array1 = [1, 4, 5, 7, 2, 3, 6, 8, 8];
-mergesort(array1);
-console.log(array1);
+const array = [1, 4, 5, 7, 2, 3, 6, 8, 8];
+mergesort(array);
+console.log(array);
 
 // TODO: Implement the algorithm exactly as in "Introduction to Algorithms"
+
+export default mergesort;

@@ -20,6 +20,6 @@ function selectionSort(array: number[], initialIndex = 0) {
     selectionSort(array, initialIndex + 1);
 }
 
-const array4 = [8, 7, 1, 2, 5, 4, 3, 6];
-selectionSort(array4);
-console.log(array4);
+const array1 = [8, 7, 1, 2, 5, 4, 3, 6];
+selectionSort(array1);
+console.log(array1);

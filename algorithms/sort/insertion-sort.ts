@@ -5,11 +5,21 @@ interface Array<T> {
     insertionSort(callback?: (a: any, b: any) => boolean): Array<T>;
 }
 
-Array.prototype.insertionSort = function(aGreaterThanB?: (a: any, b: any) => boolean) {
+Array.prototype.insertionSort = function (
+    aGreaterThanB?: (a: any, b: any) => boolean
+) {
     let currentElement: any, previousElementIndex: number;
-    aGreaterThanB = aGreaterThanB || function(a, b): boolean { return a > b; }
+    aGreaterThanB =
+        aGreaterThanB ||
+        function (a, b): boolean {
+            return a > b;
+        };
 
-    for (let currentElementIndex = 1; currentElementIndex < this.length; currentElementIndex++) {
+    for (
+        let currentElementIndex = 1;
+        currentElementIndex < this.length;
+        currentElementIndex++
+    ) {
         currentElement = this[currentElementIndex];
         previousElementIndex = currentElementIndex - 1;
         while (
@@ -22,16 +32,16 @@ Array.prototype.insertionSort = function(aGreaterThanB?: (a: any, b: any) => boo
         this[previousElementIndex + 1] = currentElement;
     }
     return this;
-}
+};
 
 const array = [
     { foo: "lorem", value: 8 },
     { foo: "ipsum", value: 3 },
     { foo: "dolor", value: 5 },
     { foo: "rolod", value: 1 },
-    { foo: "merol", value: 3 },
+    { foo: "merol", value: 3 }
 ];
-array.insertionSort((a, b) => (a.value > b.value));
+array.insertionSort((a, b) => a.value > b.value);
 console.log(array);
 /*
 Expected output:
