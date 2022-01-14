@@ -17,7 +17,6 @@
         "@typescript-eslint/no-inferrable-types": 0,
         "@typescript-eslint/prefer-namespace-keyword": 0,
         "@typescript-eslint/no-namespace": 0,
-        "@typescript-eslint/no-explicit-any": "off",
         "no-unused-vars": [
             "warn",
             { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
