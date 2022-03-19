@@ -43,7 +43,7 @@
             }
         ],
         "no-conditional-assignment": true,
-        "no-console": true,
+        "no-console": false,
         "no-debugger": true,
         "use-isnan": true,
         "no-unsafe-finally": true,
@@ -94,7 +94,7 @@
         ],
         "semicolon": [
             true,
-            "never"
+            "always"
         ],
         "comment-format": [
             true,
