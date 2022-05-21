@@ -23,17 +23,47 @@ export default class BinarySearchTree {
 
     search(key: string) {}
 
-    inOrderTraverse() {}
+    inOrderTraverse(callback: any) {
+        this.inOrderTraverseNode(this.root, callback);
+    }
 
-    preOrderTraverse() {}
+    preOrderTraverse(callback: any) {
+        this.preOrderTraverseNode(this.root, callback);
+    }
 
-    postOrderTraverse() {}
+    postOrderTraverse(callback: any) {
+        this.postOrderTraverseNode(this.root, callback);
+    }
 
     min() {}
 
     max() {}
 
     remove(key: string) {}
+
+    private inOrderTraverseNode(node: Node | null, callback: any) {
+        if (node) {
+            this.inOrderTraverseNode(node.left, callback);
+            callback(node.key);
+            this.inOrderTraverseNode(node.right, callback);
+        }
+    }
+
+    private preOrderTraverseNode(node: Node | null, callback: any) {
+        if (node) {
+            callback(node.key);
+            this.preOrderTraverseNode(node.left, callback);
+            this.preOrderTraverseNode(node.right, callback);
+        }
+    }
+
+    private postOrderTraverseNode(node: Node | null, callback: any) {
+        if (node) {
+            this.postOrderTraverseNode(node.left, callback);
+            this.postOrderTraverseNode(node.right, callback);
+            callback(node.key);
+        }
+    }
 
     private insertNode(node: Node, key: number) {
         if (this.compareFunction(key, node.key) === COMPARE_RESULT.LEFT_LESS_THAN_RIGTH) {
@@ -53,6 +83,7 @@ export default class BinarySearchTree {
 }
 
 const tree = new BinarySearchTree();
+
 tree.insert(11);
 tree.insert(7);
 tree.insert(15);
@@ -67,5 +98,6 @@ tree.insert(14);
 tree.insert(20);
 tree.insert(18);
 tree.insert(25);
+tree.insert(6);
 
-console.log(tree);
+tree.postOrderTraverse(console.log);
