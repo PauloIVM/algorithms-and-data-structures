@@ -1,0 +1,5 @@
+Bibliography:
+
+- [ Livro de ED em JS, colocar REF certinho ]
+- "ACH2023 - Algoritmos e Estruturas de Dados", William Yukio Honda e Ivandré Paraboni
+- www.each.usp.br/digiampietri/ed
