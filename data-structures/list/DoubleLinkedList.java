@@ -86,7 +86,7 @@ public class DoubleLinkedList {
             return null;
         }
         Node temp = head;
-        if (i < (length / 2)) {
+        if (index < (length / 2)) {
             for (int i = 0; i < index; i++) {
                 temp = temp.next;
             }
